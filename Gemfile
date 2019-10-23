@@ -64,7 +64,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ## Gemfile for Rails 3+, Sinatra, and Merb
-gem 'bootstrap', '4.0.0.alpha6'
+gem 'bootstrap', '4.3.1'
 gem 'devise'
 gem 'popper_js'
 gem 'jquery-ui-rails'
