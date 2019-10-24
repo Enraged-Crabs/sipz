@@ -1,1 +1,174 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  color: gray;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+}
+
+body {
+  overflow-y: scroll; 
+}
+
+a, .signin, .signup, .forgot, .addpost, .editpost {
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:hover {
+  color: rgba(250,125,0,1.0);
+  text-decoration: none;
+}
+
+#SignIn, #SignUp, #Forgot, #NewPost, #EditPost {
+  display: none;
+}
+
+.sipz-columns {
+  display: grid;
+  grid-template-columns: auto 840px auto;
+  width: 100%;
+  height: 100%;  
+}
+
+.sipz-header, .sipz-content {
+  width: 840px;
+}
+
+.sipz-header {
+  position: fixed;
+  height: 40px;
+  padding: 5px;
+  background-color: white;
+}
+
+.sipz-logo {
+  float: left;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  color: orange;
+}
+
+.sipz-log {
+  float: right;
+}
+
+.sipz-log-form {
+  z-index: 10;
+  float: right;
+  top: 0px;
+  right: 0px;
+  width: 410px;
+  height: 410px;
+  margin: 5px;
+  padding: 40px;
+  background-color: rgb(245,245,245);
+}
+
+.form-control {
+  width: 100%;
+  height: 30px;
+  padding: 0px 10px;
+  color: white;
+  font-size: 14px;
+  line-height: 10px;
+  border: none;
+  border-radius: 0px;
+  background-color: white;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  color: white;
+  outline: none;
+  background-color: white;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.text > textarea {
+  padding: 10px;
+  min-height: 44px;
+}
+
+.file.sipz-enter {
+  padding: 0px;
+  line-height: 26px;
+}
+
+.sipz-enter {
+  height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 10px;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  background-color: orange;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.sipz-enter:hover {
+  background-color: black;
+  color: orange;
+}
+
+.sipz-content {
+  margin-top: 35px;
+  height: 100%;
+}
+
+.alert, .notice {
+  float: right;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 30px;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 20px;
+  vertical-align: middle;
+  border: none;
+}
+
+.notice {
+  color: gray;
+}
+
+.alert {
+  color: orange;
+}
+
+
+@media all and (max-width: 900px) {
+  .sipz-columns {
+    grid-template-columns: auto 630px auto;
+  }
+  .sipz-header, .sipz-content {
+    width: 630px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .sipz-columns {
+    grid-template-columns: auto 420px auto;
+  }
+  .sipz-header, .sipz-content {
+    width: 420px;
+  }
+}

@@ -2,6 +2,7 @@ class SipzController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]    
     
     def index
+        @sipz = Sip.all.order(updated_at: :desc)
     end
 
     def new

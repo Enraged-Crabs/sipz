@@ -69,3 +69,7 @@ gem 'devise'
 gem 'popper_js'
 gem 'jquery-ui-rails'
 gem 'simple_form'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'font-awesome-rails'
