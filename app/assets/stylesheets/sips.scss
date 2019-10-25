@@ -1,0 +1,59 @@
+.posts-link, .post-preview {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.posts-link {
+  text-align: center;
+  vertical-align: bottom;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 200px;
+  color: white;
+  background-color: orange;
+}
+
+.post-preview {
+  color: white;
+  background-color: black;
+}
+
+.post-message {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  top: 100%;
+  padding: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+  transition: all 0.2s ease-out;
+}
+
+.post-preview:hover > .post-message {
+  top: 50%;
+  transition: all 0.1s ease-out;
+}
+
+.post {
+  width: auto;
+  height: 410px;
+}
+
+.post-image {
+  float: left;
+  width: 410px;
+  height: 410px;
+  margin: 5px;
+}
+
+.post-caption {
+  float: left;
+  width: 410px;
+  height: 410px;
+  margin: 5px;
+  padding: 20px;
+  background-color: whitesmoke;
+}

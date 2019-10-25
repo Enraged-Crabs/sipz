@@ -1,0 +1,9 @@
+<div class="post">
+  <div class="post-image" style="background: url(/assets/pic-<%= @sip.id %>.png) top; background-size: cover;"></div>
+  <div class="post-caption" id="Caption">
+    <span class="fa fa-user-circle" style="font-size:20px;"></span>
+    <%= @sip.user.email %></br></br>
+    <%= @sip.message %></br></br>
+    <%= @sip.created_at %>
+  </div>
+</div>

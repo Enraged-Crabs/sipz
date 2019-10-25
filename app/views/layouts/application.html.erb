@@ -13,12 +13,12 @@
 
 <!-- header -->    
         <div class="sipz-header">
-          <%= link_to "Sipz", "#", class: "sipz-logo" %>
+          <%= link_to "Sipz", root_path, class: "sipz-logo" %>
         
 <!-- user -->
           <div class="sipz-log">
             <% if  @sip.present? && current_user == @sip.user %>
-              <span class="editpost">Edit</span> • <%= link_to 'Delete Post', sip_path, method: :delete, data: {confirm: 'Are you sure you want to delete is Post?'} %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+              <span class="editpost">Edit Post</span> • <%= link_to 'Delete Post', sip_path, method: :delete, data: {confirm: 'Are you sure you want to delete is Post?'} %> • <%= link_to current_user.email %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
             <% elsif current_user %>
               <span class="addpost">Add Post</span> • <%= link_to current_user.email %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
             <% else %>
@@ -47,9 +47,14 @@
           <div id="Forgot">
             <%= render template: "devise/passwords/new" %>
           </div>
-          <div id="NewPost">
-            <%=  %>
+          <div id="AddPost">
+            <%= render template: "sips/new" %>
           </div>
+          <% if current_user && @sip.present? %>
+            <div id="EditPost">
+              <%= render template: "sips/edit" %>
+            </div>
+          <% end %>
 
 <!-- show/hide -->
           <script>
@@ -69,10 +74,11 @@
               $( "#Forgot" ).show();
             });
             $( ".addpost" ).click(function() {
-              $( "#NewPost" ).toggle();
+              $( "#AddPost" ).toggle();
             });
             $( ".editpost" ).click(function() {
               $( "#EditPost" ).toggle();
+              $( "#Caption" ).toggle();
             });
           </script>
         </div>

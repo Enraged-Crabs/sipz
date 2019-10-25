@@ -1,7 +1,6 @@
 <div class="sipz-log-form">
   <%= simple_form_for Sip.new do |f| %>
     <%= f.input :message, required: true, label: false, placeholder: 'Post must include a 5-100 character message & an image', input_html: {maxlength: 100} %>
-    <%= f.input_field :image, class: 'sipz-enter float-left' %>
     <%= f.submit 'Add Post', class: 'sipz-enter float-right' %>
   <% end %>
 </div>
