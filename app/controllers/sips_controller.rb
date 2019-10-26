@@ -2,10 +2,10 @@ class SipsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     
   def index
-    @sips = Sip.all.order(updated_at: :desc)
+    @sips = Sip.order('RANDOM()').all
   end
 
-  def posts
+  def list
     @sips = Sip.all.order(updated_at: :desc)
   end
 

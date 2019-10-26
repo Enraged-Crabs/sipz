@@ -1,4 +1,15 @@
-<div class="sipz-log-form">
+<div class="sipz-welcome-login">
+  <p>
+    Share</br>
+    - beers</br>
+    - breweries</br>
+    Rate and fallow</br>
+    - beers</br>
+    - breweries</br>
+    - users
+  </p>
+</div>
+<div class="sipz-form-login">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= f.input :email, required: true, label: false, placeholder: 'email' %>
     <%= f.input :password, required: true, label: false, placeholder: 'password' %>

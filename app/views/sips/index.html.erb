@@ -1,11 +1,9 @@
-<div class="posts-link">NEW</div>
+<%= link_to "NEW", "/list", class: "post-list-link" %>
 
 <% @sips.each do |sip| %>
   <%= link_to sip_path(sip) do %>
-    <div class="post-preview" style="background: url(/assets/pic-<%= sip.id %>.png) center; background-size: cover;">
-      <div class="post-message">
-        <span class="fa fa-user-circle" style="font-size:20px;"></span>
-        <%= sip.user.email %></br>
+    <div class="post-preview" style="background: url(/assets/pic-<%= sip.id %>.png) center">
+      <div class="post-caption">
         <%= sip.message %>
       </div>
     </div>

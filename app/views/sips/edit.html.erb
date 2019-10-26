@@ -1,6 +1,9 @@
-<div class="sipz-log-form">
-  <%= simple_form_for @sip do |f| %>
+<%= simple_form_for @sip do |f| %>
+  <div class="sipz-form-image">
+    <%= f.input :message, required: true, label: false, placeholder: 'upload an image', input_html: {maxlength: 100} %>
+  </div>
+  <div class="sipz-form-caption">
     <%= f.input :message, required: true, label: false, input_html: {maxlength: 100} %>
-    <%= f.submit 'Update Post', class: 'sipz-enter float-right' %>
-  <% end %>
-</div>
+    <%= f.submit 'Update Post', class: 'sipz-enter float-right' %>    
+  </div>
+<% end %>

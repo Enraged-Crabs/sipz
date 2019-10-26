@@ -56,19 +56,28 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
   color: orange;
 }
 
-.sipz-log {
+.sipz-logo:hover {
+  color: gray;
+}
+
+.sipz-nav {
   float: right;
 }
 
-.sipz-log-form {
-  z-index: 10;
-  float: right;
-  top: 0px;
-  right: 0px;
+.sipz-welcome-login, .sipz-form-login, .sipz-form-image, .sipz-form-caption {
+  float: left;
   width: 410px;
   height: 410px;
   margin: 5px;
   padding: 40px;
+}
+
+.sipz-welcome-login, .sipz-form-image {
+  color: white;
+  background-color: gray;
+}
+
+.sipz-form-login, .sipz-form-caption {
   background-color: whitesmoke;
 }
 
