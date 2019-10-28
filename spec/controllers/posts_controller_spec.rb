@@ -9,7 +9,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
 
-  describe "post#new action" do
+  describe "posts#new action" do
     it "should require users to be logged in" do
       get :new
       expect(response).to redirect_to new_user_session_path
@@ -28,7 +28,7 @@ RSpec.describe PostsController, type: :controller do
   describe "posts#create action" do
 
     it "should require users to be logged in" do
-      post :create, params: { post: { message: "" } }
+      post :create, params: { post: { message: "Hello" } }
       expect(response).to redirect_to new_user_session_path
     end
 
@@ -36,11 +36,11 @@ RSpec.describe PostsController, type: :controller do
       user = FactoryBot.create(:user)
       sign_in user
 
-      post :create, params: { post: { message: '' } }
+      post :create, params: { post: { message: 'Hello!' } }
       expect(response).to redirect_to root_path
 
       post = Post.last
-      expect(post.message).to eq("")
+      expect(post.message).to eq("Hello!")
       expect(post.user).to eq(user)
     end
 
@@ -48,7 +48,7 @@ RSpec.describe PostsController, type: :controller do
       user = FactoryBot.create(:user)
       sign_in user
 
-      post_count = Post.count
+      post_count = post.count
       post :create, params: { post: { message: '' } }
       expect(response).to have_http_status(:unprocessable_entity)
       expect(post_count).to eq Post.count
