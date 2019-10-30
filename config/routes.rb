@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" etc....}
-  devise_for :users, path: 'users', controllers: { sessions: "users/sessions" etc....}
+  devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions" }
+  devise_for :users, path: 'users', controllers: { sessions: "users/sessions" }
   root "posts#index"
   resources :posts, only: [:new, :create]
 end
