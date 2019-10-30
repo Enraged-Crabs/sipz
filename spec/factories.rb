@@ -9,11 +9,14 @@ FactoryBot.define do
 
   factory :post do
     
-  end
-
-    factory :user do
+  end  
+  
+  factory :user do
       sequence :email do |n|
-        "dummyEmail#{n}@gmail.com" 
+         "dummyEmail#{n}@gmail.com" 
+      end
+      sequence :username do |n|
+        "Pint_o'_Guiness"
       end
       password { "secretPassword" }
       password_confirmation { "secretPassword" }

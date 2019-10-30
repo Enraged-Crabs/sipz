@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :user
-  has_many :comments
-  belongs_to :beer
-
+    validates :message, presence: true
+    belongs_to :user
+    has_many :comments
+    belongs_to :beer
 end
