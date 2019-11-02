@@ -1,0 +1,9 @@
+<%= simple_form_for @post do |f| %>
+  <div class="form-image">
+    <%= f.input :message, required: true, label: false, placeholder: 'upload an image', input_html: {maxlength: 100} %>
+  </div>
+  <div class="form-caption">
+    <%= f.input :message, required: true, label: false, input_html: {maxlength: 100} %>
+    <%= f.submit 'Update Post', class: 'enter float-right' %>    
+  </div>
+<% end %>

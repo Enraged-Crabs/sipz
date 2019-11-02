@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {registrations: 'registrations', passwords: 'passwords'}
-  root 'sips#index'
-  get 'list', to: 'sips#list'
-  resources :sips, only: [:new, :create, :show, :edit, :update, :destroy]
-
+  devise_for :admins, path: 'admins', controllers: { sessions: "admins/sessions", registrations: 'admins/registrations', passwords: 'admins/passwords' }
+  devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: 'users/registrations', passwords: 'users/passwords' }
+  root "posts#index"
+  get 'list', to: 'posts#list'
+  resources :posts, only: [:new, :create, :show, :edit, :update, :destroy]
 end

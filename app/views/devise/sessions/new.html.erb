@@ -1,4 +1,4 @@
-<div class="sipz-welcome-login">
+<div class="welcome-login">
   <p>
     Share</br>
     - beers</br>
@@ -9,13 +9,13 @@
     - users
   </p>
 </div>
-<div class="sipz-form-login">
+<div class="form-login">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.input :email, required: true, label: false, placeholder: 'email' %>
-    <%= f.input :password, required: true, label: false, placeholder: 'password' %>
-    <div class="sipz-log-links float-left">
+    <%= f.input :email, required: true, label: false, placeholder: 'email', input_html: { autocomplete: "email" } %>
+    <%= f.input :password, required: true, label: false, placeholder: 'password', input_html: { autocomplete: "password" } %>
+    <div class="log-links float-left">
       <a class="forgot">Forgot Password?</a>
     </div>
-    <%= f.button :submit, 'Sign In', class: 'sipz-enter float-right' %>
+    <%= f.button :submit, 'Sign In', class: 'enter float-right' %>
   <% end %>
 </div>

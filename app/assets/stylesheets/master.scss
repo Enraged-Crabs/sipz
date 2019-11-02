@@ -30,25 +30,25 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
   display: none;
 }
 
-.sipz-columns {
+.columns {
   display: grid;
   grid-template-columns: auto 840px auto;
   width: 100%;
   height: 100%;  
 }
 
-.sipz-header, .sipz-content {
+.header, .content {
   width: 840px;
 }
 
-.sipz-header {
+.header {
   position: fixed;
   height: 40px;
   padding: 5px;
   background-color: white;
 }
 
-.sipz-logo {
+.logo {
   float: left;
   font-size: 30px;
   font-weight: 700;
@@ -56,15 +56,15 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
   color: orange;
 }
 
-.sipz-logo:hover {
+.logo:hover {
   color: gray;
 }
 
-.sipz-nav {
+.nav {
   float: right;
 }
 
-.sipz-welcome-login, .sipz-form-login, .sipz-form-image, .sipz-form-caption {
+.welcome-login, .form-login, .form-image, .form-caption {
   float: left;
   width: 410px;
   height: 410px;
@@ -72,12 +72,12 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
   padding: 40px;
 }
 
-.sipz-welcome-login, .sipz-form-image {
+.welcome-login, .form-image {
   color: white;
   background-color: gray;
 }
 
-.sipz-form-login, .sipz-form-caption {
+.form-login, .form-caption {
   background-color: whitesmoke;
 }
 
@@ -114,12 +114,12 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
   line-height: 20px;
 }
 
-.file.sipz-enter {
+.file.enter {
   padding: 0px;
   line-height: 26px;
 }
 
-.sipz-enter {
+.enter {
   height: 30px;
   padding: 10px;
   font-size: 14px;
@@ -135,12 +135,12 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
   transition: all 0.3s ease;
 }
 
-.sipz-enter:hover {
+.enter:hover {
   background-color: black;
   color: orange;
 }
 
-.sipz-content {
+.content {
   margin-top: 40px;
   height: 100%;
 }
@@ -167,19 +167,19 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .editpost:
 
 
 @media all and (max-width: 900px) {
-  .sipz-columns {
+  .columns {
     grid-template-columns: auto 630px auto;
   }
-  .sipz-header, .sipz-content {
+  .header, .content {
     width: 630px;
   }
 }
 
 @media all and (max-width: 700px) {
-  .sipz-columns {
+  .columns {
     grid-template-columns: auto 420px auto;
   }
-  .sipz-header, .sipz-content {
+  .header, .content {
     width: 420px;
   }
 }
