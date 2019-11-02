@@ -67,9 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '4.3.1'
 gem 'devise'
 gem 'popper_js'
-gem 'jquery-ui-rails'
 gem 'simple_form'
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'font-awesome-rails'
