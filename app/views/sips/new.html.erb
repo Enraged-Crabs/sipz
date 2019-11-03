@@ -1,9 +1,0 @@
-<%= simple_form_for Sip.new do |f| %>
-  <div class="sipz-form-image">
-    <%= f.input :message, required: true, label: false, placeholder: 'upload an image', input_html: {maxlength: 100} %>
-  </div>
-  <div class="sipz-form-caption">
-    <%= f.input :message, required: true, label: false, placeholder: '5-100 character caption', input_html: {maxlength: 100} %>
-    <%= f.submit 'Add Post', class: 'sipz-enter float-right' %>
-  </div>
-<% end %>

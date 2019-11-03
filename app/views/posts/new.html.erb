@@ -1,9 +1,10 @@
 <%= simple_form_for Post.new do |f| %>
   <div class="form-image">
-    <%= f.input :caption, required: true, label: false, placeholder: 'upload an image', input_html: {maxlength: 100} %>
+    
   </div>
   <div class="form-caption">
-    <%= f.input :caption, required: true, label: false, placeholder: '5-100 character caption', input_html: {maxlength: 100} %>
+    <%= f.input :beer, required: true, label: false, placeholder: 'beer name' %>
+    <%= f.input :caption, required: true, label: false, placeholder: '5-100 character caption' %>
     <%= f.submit 'Add Post', class: 'enter float-right' %>
   </div>
 <% end %>

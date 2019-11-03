@@ -11,7 +11,7 @@
 </div>
 <div class="form-login">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.input :email, required: true, label: false, placeholder: 'email', input_html: { autocomplete: "email" } %>
+    <%= f.input :login, required: true, label: false, placeholder: 'username', input_html: { autocomplete: "username" } %>
     <%= f.input :password, required: true, label: false, placeholder: 'password', input_html: { autocomplete: "password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     <div class="log-links float-left">

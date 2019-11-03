@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :message, presence: true, length: { maximum: 100, minimum: 5 }
+  validates :caption, presence: true, length: { maximum: 100, minimum: 3 }
   belongs_to :user
   has_many :comments
   belongs_to :beer
