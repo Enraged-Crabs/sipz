@@ -1,0 +1,10 @@
+<%= simple_form_for @post do |f| %>
+  <div class="form-image">
+    
+  </div>
+  <div class="form-caption">
+    <%= f.input :beer, required: true, label: false %>
+    <%= f.input :caption, required: true, label: false %>
+    <%= f.submit 'Update Post', class: 'enter float-right' %>    
+  </div>
+<% end %>

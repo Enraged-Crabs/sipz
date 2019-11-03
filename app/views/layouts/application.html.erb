@@ -7,21 +7,85 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if current_user %>
-      You're signed in as <%= current_user.username %>.
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Log In", new_user_session_path %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-    <% end %>
-    <% if notice.present? %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
+    <div class="sipz-columns">
+      <div></div>
+      <div>
 
-    <% if alert.present? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
+<!-- header -->    
+        <div class="sipz-header">
+          <%= link_to "Sipz", root_path, class: "sipz-logo" %>
+        
+    <!-- user -->
+          <div class="sipz-nav">
+            <% if  @post.present? && current_user == @post.user %>
+              <span class="editpost">Edit Post</span> • <%= link_to 'Delete Post', post_path, method: :delete, data: {confirm: 'Are you sure you want to delete this Post?'} %> • <%= link_to current_user.email %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <% elsif current_user %>
+              <span class="addpost">Add Post</span> • <%= link_to current_user.username, "#", class: "sipz-user" %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <span class="signup">Sign Up</span> • <span class="signin">Sign In</span>
+            <% end %>
+          </div>
 
-    <%= yield %>
+    <!-- alert -->
+          <% if notice.present? %>
+            <span class="notice"><%= notice %></span>
+          <% end %>
+          <% if alert.present? %>
+            <span class="alert"><%= alert %></span>
+          <% end %>
+        </div>
+
+<!-- content -->   
+        <div class="sipz-content">
+
+    <!-- forms -->
+          <div id="SignIn">
+            <%= render template: "users/sessions/new" %>
+          </div>
+          <div id="SignUp" class="float-right">
+            <%= render template: "users/registrations/new" %>
+          </div>
+          <div id="Forgot">
+            <%= render template: "users/passwords/new" %>
+          </div>
+          <div id="AddPost">
+            <%= render template: "posts/new" %>
+          </div>
+          <% if current_user && @post.present? %>
+            <div id="EditPost">
+              <%= render template: "posts/edit" %>
+            </div>
+          <% end %>
+
+    <!-- show/hide -->
+          <script>
+            $( ".signin" ).click(function() {
+              $( "#SignIn" ).toggle();
+              $( "#SignUp" ).hide();
+              $( "#Forgot" ).hide();
+            });
+            $( ".signup" ).click(function() {
+              $( "#SignIn" ).hide();
+              $( "#SignUp" ).toggle();
+              $( "#Forgot" ).hide();
+            });
+            $( ".forgot" ).click(function() {
+              $( "#SignIn" ).hide();
+              $( "#SignUp" ).hide();
+              $( "#Forgot" ).show();
+            });
+            $( ".addpost" ).click(function() {
+              $( "#AddPost" ).toggle();
+            });
+            $( ".editpost" ).click(function() {
+              $( "#EditPost" ).toggle();
+            });
+          </script>
+        </div>
+
+        <%= yield %>        
+      </div>
+      <div></div>
+    </div>
   </body>
 </html>

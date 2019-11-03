@@ -1,20 +1,22 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
+<div class="welcome-login">
+  <p>
+    Share</br>
+    - beers</br>
+    - breweries</br>
+    Rate and Follow</br>
+    - beers</br>
+    - breweries</br>
+    - users
+  </p>
+</div>
+<div class="form-login">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.input :login, required: true, label: false, placeholder: 'username', input_html: { autocomplete: "username" } %>
+    <%= f.input :password, required: true, label: false, placeholder: 'password', input_html: { autocomplete: "password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+    <div class="log-links float-left">
+      <a class="forgot">Forgot Password?</a>
+    </div>
+    <%= f.button :submit, 'Sign In', class: 'enter float-right' %>
+  <% end %>
+</div>
