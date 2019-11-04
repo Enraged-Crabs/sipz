@@ -7,6 +7,9 @@
     <%= @beer.created_at %>
   </div>
   <div class="post-comments">
-    <%= link_to 'Add a new post...', new_beer_post_path(@beer) %>
+    <% @beer.posts.each do |post| %>
+      <p><%= post.caption %></p>
+    <% end %>
+    <%= link_to 'Add a new post...', new_beer_post_path(@beer, @post) %>
   </div>
 </div>
