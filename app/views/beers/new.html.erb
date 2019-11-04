@@ -1,0 +1,9 @@
+<%= simple_form_for Beer.new do |f| %>
+    <div class="form-image">
+      
+    </div>
+    <div class="form-caption">
+      <%= f.input :name, required: true, label: false, placeholder: 'beer name' %>
+      <%= f.submit 'Add Beer', class: 'enter float-right' %>
+    </div>
+  <% end %>

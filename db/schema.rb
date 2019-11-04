@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_10_29_011359) do
 
   create_table "beers", force: :cascade do |t|
     t.integer "beer_id"
+    t.integer "user_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
