@@ -1,10 +1,15 @@
-<%= simple_form_for Post.new do |f| %>
+<%= simple_form_for @post do |f| %>
     <div class="form-image">
       
     </div>
     <div class="form-caption">
-      <%= f.input :beer, required: true, label: false, placeholder: 'beer name' %>
-      <%= f.input :caption, required: true, label: false, placeholder: '5-100 character caption' %>
+      <% if @beer %>
+        <h1><%= @beer.name %></h1>
+      <% else %>
+        <%= f.input :beer, required: true, label:false, placeholder: 'beer name' %>
+      <% end %>
+
+      <%= f.input :caption, label: false, placeholder: '3-100 character caption', as: :text, :input_html => { :rows => 10 } %>
       <%= f.submit 'Add Post', class: 'enter float-right' %>
     </div>
   <% end %>
