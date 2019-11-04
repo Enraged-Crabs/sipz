@@ -1,8 +1,8 @@
-<%= link_to "BEER", "/list", class: "post-list-link" %>
+<%= link_to "NEW", "/list", class: "post-list-link" %>
 
-<%= @beers.each do |beer| %>
+<% @beers.each do |beer| %>
   <%= link_to beer_path(beer) do %>
-    <div class="post-preview" style="background: url(/assets/pic-<%= beer.id %>.png) center">
+    <div class="post-preview" style="background: url(/assets/pic-<%= beer.id %>.png) center; background-size: cover;">
       <div class="post-caption">
         <%= beer.name %>
       </div>

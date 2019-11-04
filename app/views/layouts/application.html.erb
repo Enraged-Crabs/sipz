@@ -19,6 +19,8 @@
           <div class="sipz-nav">
             <% if  @post.present? && current_user == @post.user %>
               <span class="editpost">Edit Post</span> • <%= link_to 'Delete Post', post_path, method: :delete, data: {confirm: 'Are you sure you want to delete this Post?'} %> • <%= link_to current_user.email %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            <% elsif @beer.present? && current_user == @beer.user %>
+              <span class="editbeer">Edit Beer</span> • <%= link_to 'Delete Beer', beer_path, method: :delete, data: {confirm: 'Are you sure you want to delete this Beer?'} %> • <%= link_to current_user.email %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
             <% elsif current_user %>
               <span class="addbeer">Add Beer</span> • <%= link_to current_user.username, "#", class: "sipz-user" %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
             <% else %>
@@ -51,7 +53,14 @@
           <div id="AddBeer">
             <%= render template: "beers/new" %>
           </div>
-          <% if current_user && @post.present? %>
+          <div id="AddPost">
+            <%= render template: "posts/new" %>
+          </div>
+          <% if current_user && @beer.present? %>
+            <div id="EditBeer">
+              <%= render template: "beers/edit" %>
+            </div>
+          <% elsif current_user && @post.present? %>
             <div id="EditPost">
               <%= render template: "posts/edit" %>
             </div>
@@ -76,6 +85,12 @@
             });
             $( ".addbeer" ).click(function() {
               $( "#AddBeer" ).toggle();
+            });
+            $( ".addpost" ).click(function() {
+              $( "#AddPost" ).toggle();
+            });
+            $( ".editbeer" ).click(function() {
+              $( "#EditBeer" ).toggle();
             });
             $( ".editpost" ).click(function() {
               $( "#EditPost" ).toggle();
