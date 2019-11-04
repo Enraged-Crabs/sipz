@@ -6,5 +6,6 @@ class CreateBeers < ActiveRecord::Migration[5.2]
       t.string :name
       t.timestamps
     end
+      add_index :beers, :user_id
   end
 end

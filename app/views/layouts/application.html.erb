@@ -53,16 +53,9 @@
           <div id="AddBeer">
             <%= render template: "beers/new" %>
           </div>
-          <div id="AddPost">
-            <%= render template: "posts/new" %>
-          </div>
           <% if current_user && @beer.present? %>
             <div id="EditBeer">
               <%= render template: "beers/edit" %>
-            </div>
-          <% elsif current_user && @post.present? %>
-            <div id="EditPost">
-              <%= render template: "posts/edit" %>
             </div>
           <% end %>
 

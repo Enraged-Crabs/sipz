@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users, path: 'users', controllers: { sessions: "users/sessions", registrations: 'users/registrations', passwords: 'users/passwords' }
   root "beers#index"
   get 'list', to: 'beers#list'
-  resources :beers, only: [:new, :create, :show, :edit, :update, :destroy]
-  resources :posts, only: [:new, :create, :show, :edit, :update, :destroy]
+  
+  resources :beers, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :posts, only: [:new, :create, :show, :edit, :update, :destroy]
+  end
+  
 end

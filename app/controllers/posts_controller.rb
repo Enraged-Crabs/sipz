@@ -10,15 +10,14 @@ class PostsController < ApplicationController
   end
 
   def new
+    @beer = Beer.find(params[:beer_id])
     @post = Post.new
   end
 
   def create
-    @post = current_user.posts.create(post_params)
-    if @post.invalid?
-      flash[:alert] = 'Post must include a 5-100 character message & an image'
-    end
-    redirect_to root_path
+    @beer = Beer.find(params[:beer_id])
+    @beer.posts.create(post_params.merge(user: current_user))
+    redirect_to beer_path(@beer)
   end
 
   def show

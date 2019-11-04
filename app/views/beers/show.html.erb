@@ -7,6 +7,6 @@
     <%= @beer.created_at %>
   </div>
   <div class="post-comments">
-    Comments
+    <%= link_to 'Add a new post...', beer_posts_path(@beer) %>
   </div>
 </div>
