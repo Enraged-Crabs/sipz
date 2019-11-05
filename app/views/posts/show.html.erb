@@ -7,6 +7,9 @@
     <%= @sip.created_at %>
   </div>
   <div class="post-comments">
-    Comments
+    <%= simple_form_for @comment do |f| %>
+      <%= f.input :message %>
+      <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+  <% end %>
   </div>
 </div>
