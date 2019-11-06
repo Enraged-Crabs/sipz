@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     return render_not_found(:forbidden) if @post.user != current_user
     @post.update_attributes(post_params)
     if @post.valid?
-      redirect_to post_path(@post)
+      redirect_to beer_post_path(@post)
     else
       return render :edit, status: :unprocessable_entity
     end

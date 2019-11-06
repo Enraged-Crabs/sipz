@@ -19,13 +19,13 @@
           <div class="sipz-nav">
             <% if user_signed_in? %>
               <% if @post.present? && current_user == @post.user %>
-                <span class="editpost">Edit Post</span> • <%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this Post?'} %> • 
+                <span class="editpost">Edit Post</span> • <%= link_to 'Delete Post', beer_post_path(@post), method: :delete, data: {confirm: 'Are you sure you want to delete this Post?'} %> • 
               <% elsif @beer.present? && current_user == @beer.user %>
                 <span class="editbeer">Edit Beer</span> • <%= link_to 'Delete Beer', beer_path(@beer), method: :delete, data: {confirm: 'Are you sure you want to delete this Beer?'} %> • 
               <% else %>
-                <span class="addbeer">Add Beer</span> • 
+                <span class="addbeer">Add New Beer</span> • 
               <% end %>
-              <%= link_to current_user.email %> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+              <span class="sipz-user"><%= link_to current_user.username %></span> • <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
             <% else %>
               <span class="signup">Sign Up</span> • <span class="signin">Sign In</span>
             <% end %>
@@ -55,10 +55,15 @@
           </div>
           <div id="AddBeer">
             <%= render template: "beers/new" %>
-          </div>
+          </div>  
           <% if current_user && @beer.present? %>
             <div id="EditBeer">
               <%= render template: "beers/edit" %>
+            </div>
+          <% end %>
+          <% if current_user && @post.present? %>
+            <div id="EditPost">
+              <%= render template: "posts/edit" %>
             </div>
           <% end %>
 
@@ -81,9 +86,6 @@
             });
             $( ".addbeer" ).click(function() {
               $( "#AddBeer" ).toggle();
-            });
-            $( ".addpost" ).click(function() {
-              $( "#AddPost" ).toggle();
             });
             $( ".editbeer" ).click(function() {
               $( "#EditBeer" ).toggle();

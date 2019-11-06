@@ -1,15 +1,40 @@
-<div class="post">
-  <div class="post-image" style="background: url(/assets/pic-<%= @beer.id %>.png) center; background-size: cover;"></div>
-  <div class="post-caption">
-    <i class="fa fa-user-circle"></i>
-    <%= @beer.user.username %><br /><br />
-    <%= @beer.name %><br /><br />
-    <%= @beer.created_at %>
-  </div>
-  <div class="post-comments">
-    <% @beer.posts.each do |post| %>
-      <p><%= post.caption %></p>
-    <% end %>
-    <%= link_to 'Add a new post...', new_beer_post_path(@beer, @post) %>
+<div class="sipz-post">
+  <div class="sipz-image" style="background: url(/assets/pic-<%= @beer.id %>.png) center; background-size: cover;"></div>
+  <div class="sipz-caption">
+    <br /><br />
+    <div class="beer-name">
+      <%= @beer.name %>
+    </div>
+    <br /><br />
+    <div class="user-date"> 
+      added by <%= @beer.user.username %> on <%= @beer.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+    </div>
+    <div class="enter-info float-left">add a post realted to this beer</div>
+    <div class="addpost enter">New Post</div>
   </div>
 </div>
+<div id="AddPost">
+  <%= render template: "posts/new" %>
+</div>
+<% @beer.posts.each do |post| %>
+  <%= link_to beer_post_path(@beer, post) do %>
+    <div class="sipz-list">
+      <div class="sipz-image" style="background: url(/assets/pic-<%= post.id %>.png) center; background-size: cover;"></div>
+      <div class="sipz-caption">
+        <br />
+        <div class="beer-name">
+          <%= post.caption %>
+        </div>
+        <br /><br />
+        <div class="user-date">
+          posted by <%= post.user.username %> on <%= post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<script>
+  $( ".addpost" ).click(function() {
+    $( "#AddPost" ).toggle();
+  });
+</script>

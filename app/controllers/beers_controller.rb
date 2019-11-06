@@ -1,27 +1,27 @@
 class BeersController < ApplicationController
-    def index
-        @beers = Beer.order('RANDOM()').all
-      end
-    
-    def list
-        @beers = Beer.all.order(updated_at: :desc)
-    end
+  def index
+    @beers = Beer.order('RANDOM()').all
+  end
+  
+  def list
+    @beers = Beer.all.order(updated_at: :desc)
+  end
 
-    def new
-        @beer = Beer.new
-    end
+  def new
+    @beer = Beer.new
+  end
 
-    def show
-        @beer = Beer.find(params[:id])
-        @post = Post.new
-    end
+  def show
+    @beer = Beer.find(params[:id])
+    @post = Post.new
+  end
 
   def create
     @beer = current_user.beers.create(beer_params)
     if @beer.invalid?
       flash[:alert] = 'Beer must include a 5-100 character message & an image'
     end
-    redirect_to root_path
+    redirect_to beer_path(@beer)
   end
 
   def show
