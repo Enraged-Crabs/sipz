@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'list', to: 'beers#list'
   
   resources :beers, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :posts, only: [:new, :create]
+    resources :posts, only: [:new, :create, :show, :edit, :update, :destroy]
   end
 
   resources :users do

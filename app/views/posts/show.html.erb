@@ -1,15 +1,14 @@
 <div class="post">
-  <div class="post-image" style="background: url(/assets/pic-<%= @sip.id %>.png) center; background-size: cover;"></div>
+  <div class="post-image" style="background: url(/assets/pic-<%= @post.id %>.png) center; background-size: cover;"></div>
   <div class="post-caption">
     <i class="fa fa-user-circle"></i>
-    <%= @sip.user.username %></br></br>
-    <%= @sip.caption %></br></br>
-    <%= @sip.created_at %>
+    <%= @post.caption %></br></br>
+    posted by <%= @post.user.username %></br></br>
+    on <%= @post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
   </div>
   <div class="post-comments">
-    <%= simple_form_for @comment do |f| %>
-      <%= f.input :message %>
-      <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
-  <% end %>
+
+comments code here
+
   </div>
 </div>

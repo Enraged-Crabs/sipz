@@ -2,14 +2,21 @@
   <div class="post-image" style="background: url(/assets/pic-<%= @beer.id %>.png) center; background-size: cover;"></div>
   <div class="post-caption">
     <i class="fa fa-user-circle"></i>
-    <%= @beer.user.username %><br /><br />
     <%= @beer.name %><br /><br />
-    <%= @beer.created_at %>
-  </div>
-  <div class="post-comments">
-    <% @beer.posts.each do |post| %>
-      <p><%= post.caption %></p>
-    <% end %>
-    <%= link_to 'Add a new post...', new_beer_post_path(@beer, @post) %>
+    added by <%= @beer.user.username %></br></br>
+    on <%= @beer.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %></br></br>
+    <%= link_to 'Add a new post...', new_beer_post_path(@beer, @post), class: 'enter float-right' %>
   </div>
 </div>
+<% @beer.posts.each do |post| %>
+  <%= link_to user_post_path(@beer, post) do %>
+    <div class="post-list">
+      <div class="post-image" style="background: url(/assets/pic-<%= post.id %>.png) center;  background-size: cover;"></div>
+      <div class="post-caption">
+        <i class="fa fa-user-circle"></i>
+        <%= post.caption %></br></br>
+        posted by <%= post.user.username %> on <%= post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

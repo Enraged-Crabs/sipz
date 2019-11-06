@@ -1,14 +1,9 @@
 <%= simple_form_for [@beer, @post] do |f| %>
     <div class="form-image">
-      
+      image uploader here
     </div>
     <div class="form-caption">
-      <% if @beer %>
-        <h1><%= @beer.name %></h1>
-      <% else %>
-        <%= f.input :beer, required: true, label:false, placeholder: 'beer name' %>
-      <% end %>
-
+      <h1><%= @beer.name %></h1>
       <%= f.input :caption, label: false, placeholder: '3-100 character caption', as: :text, :input_html => { :rows => 10 } %>
       <%= f.submit 'Add Post', class: 'enter float-right' %>
     </div>

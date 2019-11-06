@@ -1,9 +1,8 @@
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, url: user_post_path(@post) do |f| %>
   <div class="form-image">
-    
+    image uploader here
   </div>
   <div class="form-caption">
-    <%= f.input :beer, required: true, label: false %>
     <%= f.input :caption, required: true, label: false %>
     <%= f.submit 'Update Post', class: 'enter float-right' %>    
   </div>
