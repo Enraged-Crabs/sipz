@@ -21,7 +21,7 @@ class BeersController < ApplicationController
     if @beer.invalid?
       flash[:alert] = 'Beer must include a 5-100 character message & an image'
     end
-    redirect_to root_path
+    redirect_to beer_path(@beer)
   end
 
   def show

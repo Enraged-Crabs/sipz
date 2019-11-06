@@ -1,9 +1,13 @@
-<%= simple_form_for @post, url: user_post_path(@post) do |f| %>
-  <div class="form-image">
-    image uploader here
-  </div>
-  <div class="form-caption">
-    <%= f.input :caption, required: true, label: false %>
-    <%= f.submit 'Update Post', class: 'enter float-right' %>    
+<%= simple_form_for [@beer, @post], url: beer_post_path(@post) do |f| %>
+  <div class="sipz-form">
+    <div class="form-image">
+      edit post image<br /><br />
+      <input type="text" size="39" value=" image uploader here">
+    </div>
+    <div class="form-caption">
+      edit post caption<br /><br />
+      <%= f.input :caption, required: true, label: false %>
+      <%= f.submit 'Update Post', class: 'enter float-right' %>    
+    </div>
   </div>
 <% end %>

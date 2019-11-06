@@ -1,12 +1,15 @@
 <% @beers.each do |beer| %>
   <%= link_to beer_path(beer) do %>
-    <div class="post-list">
-      <div class="post-image" style="background: url(/assets/pic-<%= beer.id %>.png) center;  background-size: cover;"></div>
-      <div class="post-caption">
-        <i class="fa fa-user-circle"></i>
-        <%= beer.user.username %></br></br>
-        <%= beer.name %></br></br>
-        <%= beer.created_at %>
+    <div class="sipz-list">
+      <div class="sipz-image" style="background: url(/assets/pic-<%= beer.id %>.png) center;  background-size: cover;"></div>
+      <div class="sipz-caption">
+        <div class="beer-name">
+          <%= beer.name %>
+        </div>
+        <br /><br />
+        <div class="user-date"> 
+          added by <%= beer.user.username %> on <%= beer.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+        </div>
       </div>
     </div>
   <% end %>

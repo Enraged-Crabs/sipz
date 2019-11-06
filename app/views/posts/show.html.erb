@@ -1,14 +1,19 @@
-<div class="post">
-  <div class="post-image" style="background: url(/assets/pic-<%= @post.id %>.png) center; background-size: cover;"></div>
-  <div class="post-caption">
-    <i class="fa fa-user-circle"></i>
-    <%= @post.caption %></br></br>
-    posted by <%= @post.user.username %></br></br>
-    on <%= @post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+<div class="sipz-post">
+  <div class="sipz-image" style="background: url(/assets/pic-<%= @post.id %>.png) center; background-size: cover;"></div>
+  <div class="sipz-caption">
+    <br /><br />
+    <div class="beer-name">
+      <%= @post.caption %>
+    </div>
+    <br /><br />
+    <div class="user-date">
+      posted by <%= @post.user.username %> on <%= @post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+    </div>
+    <div class="addcomment enter float-right">Add Comment</div>
   </div>
-  <div class="post-comments">
+</div>
+<div class="sipz-comments">
 
-comments code here
+user comments code here
 
-  </div>
 </div>

@@ -13,7 +13,7 @@ body {
   overflow-y: scroll; 
 }
 
-a, .signin, .signup, .forgot, .addpost, .addbeer, .editpost, .editbeer {
+a, .signin, .signup, .forgot, .addbeer, .editbeer, .addpost, .editpost, .sipz-user {
   color: gray;
   font-size: 15px;
   font-weight: 500;
@@ -21,16 +21,17 @@ a, .signin, .signup, .forgot, .addpost, .addbeer, .editpost, .editbeer {
   text-decoration: none;
 }
 
-a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .addbeer:hover, .editpost:hover, .editbeer:hover {
+a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:hover, .addpost:hover, .editpost:hover, .sipz-user > a:hover {
   color: orange;
   text-decoration: none;
 }
 
-.sipz-user {
+.sipz-user > a {
   color: black;
+  font-weight: 700;
 }
 
-#SignIn, #SignUp, #Forgot, #AddPost, #AddBeer, #EditPost, #EditBeer {
+#SignIn, #SignUp, #Forgot, #AddBeer, #EditBeer, #AddPost, #EditPost {
   display: none;
 }
 
@@ -50,6 +51,7 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .addbeer:h
   height: 40px;
   padding: 5px;
   background-color: white;
+  z-index: 3;
 }
 
 .sipz-content {
@@ -72,12 +74,30 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .addbeer:h
   float: right;
 }
 
+.sipz-form {
+  float: left;
+  position: absolute;
+  z-index: 2;
+}
+
+.sipz-form > .form-image {
+  width: 410px;
+  height: 410px;
+}
+
+.sipz-form > .form-caption {
+  width: 410px;
+  height: 410px;
+  margin: 5px;
+  background: whitesmoke;
+}
+
 .welcome-login, .form-login, .form-image, .form-caption {
   float: left;
   width: 410px;
   height: 410px;
   margin: 5px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .welcome-login, .form-image {
@@ -141,6 +161,19 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addpost:hover, .addbeer:h
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+.form-caption > .enter, .form-caption > .enter-info  {
+  position: absolute;
+  bottom: 25px;
+}
+
+.form-caption > .enter {
+  right: 25px;  
+}
+
+.form-caption > .enter-info {
+  left: 25px;  
 }
 
 .enter:hover {
