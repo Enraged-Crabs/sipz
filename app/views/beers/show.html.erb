@@ -21,9 +21,7 @@
 <% @beer.posts.each do |post| %>
   <%= link_to beer_post_path(@beer, post) do %>
     <div class="sipz-list">
-      <div class="sipz-image"> 
-        <%= image_tag @beer.picture.url, class: 'img-fluid' %>
-        </div>
+      <div class="sipz-image"> style="background: url(/assets/pic-<%= post.id %>.png) center; background-size: cover;"></div>
       <div class="sipz-caption">
         <br />
         <div class="beer-name">
