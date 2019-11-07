@@ -18,11 +18,11 @@ class CommentsController < ApplicationController
     def create
         @beer = Beer.find_by_id(params[:beer_id])
         @post = Post.find_by_id(params[:post_id])
-        @comment = current_user.comments.create(comment_params)
+        @comment = current_user.comments.create(comment_params.merge(user: current_user, post: @post))
         if @comment.invalid?
-          flash[:alert] = 'Comment must include a 5-100 character message & an image'
+          flash[:alert] = 'Comment must be a 5-100 character message'
         end
-        redirect_to root_path
+        redirect_to beer_post_path(@beer, @post)
     end
     
     def show
@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
     
       private
     
-    def beer_params
+    def comment_params
         params.require(:comment).permit(:message)
     end
 end
