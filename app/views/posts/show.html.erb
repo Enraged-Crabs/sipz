@@ -12,13 +12,25 @@
     <div class="addcomment enter float-right">New Comment</div>
   </div>
 </div>
+
 <div id="AddComment">
   <%= render template: "comments/new" %>
 </div>
+
 <div class="sipz-comments">
-
-user comments code here
-
+  <% if !@comments.nil?%>
+    <% @post.comments.each do |comment| %>
+      <div class="Someone_Should_Change_the_class_name_to_something_else" style="background-color:black">
+        @<%= comment.user.username %>
+        -
+        <%= comment.message %>
+      </div>
+    <% end %>
+  <% elsif current_user %>
+    <p>Be the first to comment!</p>
+  <% else %>
+    <p>Log in to comment</p>
+  <% end %>
 </div>
 
 <script>
