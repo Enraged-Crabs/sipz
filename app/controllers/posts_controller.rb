@@ -23,6 +23,11 @@ class PostsController < ApplicationController
   def show
     @beer = Beer.find_by_id(params[:beer_id])
     @post = Post.find_by_id(params[:id])
+
+    # For some reason, this cannot pull Comment.all and just returns nil all the time
+    # @commets = Comment.where :post_id => @post.id
+    @comments = Comment.all
+
     return render_not_found if @post.blank?
   end
 
