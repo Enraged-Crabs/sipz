@@ -9,11 +9,20 @@
     <div class="user-date">
       posted by <%= @post.user.username %> on <%= @post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
     </div>
-    <div class="addcomment enter float-right">Add Comment</div>
+    <div class="addcomment enter float-right">New Comment</div>
   </div>
+</div>
+<div id="AddComment">
+  <%= render template: "comments/new" %>
 </div>
 <div class="sipz-comments">
 
 user comments code here
 
 </div>
+
+<script>
+  $( ".addcomment" ).click(function() {
+    $( "#AddComment").toggle();
+  });
+</script>

@@ -16,6 +16,8 @@ class CommentsController < ApplicationController
     end
     
     def create
+        @beer = Beer.find_by_id(params[:beer_id])
+        @post = Post.find_by_id(params[:post_id])
         @comment = current_user.comments.create(comment_params)
         if @comment.invalid?
           flash[:alert] = 'Comment must include a 5-100 character message & an image'
