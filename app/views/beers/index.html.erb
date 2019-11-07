@@ -5,6 +5,7 @@
     <div class="sipz-preview" style="background: url(/assets/pic-<%= beer.id %>.png) center; background-size: cover;">
       <div class="sipz-caption center">
         <div class="beer-name">
+          <%= image_tag beer.picture.url, class: 'img-fluid' %>
           <%= beer.name %>
         </div>
       </div>
