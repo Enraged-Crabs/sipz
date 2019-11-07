@@ -21,6 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @beer = Beer.find_by_id(params[:beer_id])
     @post = Post.find_by_id(params[:id])
     return render_not_found if @post.blank?
   end
