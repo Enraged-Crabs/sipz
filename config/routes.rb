@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   
   resources :beers, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :posts do
-      resources :comments, only: [:create]
+      resources :comments, only: [:create, :new]
     end
   end
-
 end
