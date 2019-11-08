@@ -50,12 +50,6 @@ ActiveRecord::Schema.define(version: 2019_11_07_222822) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "picture"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "caption"
     t.integer "user_id"

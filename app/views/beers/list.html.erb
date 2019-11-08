@@ -1,7 +1,8 @@
 <% @beers.each do |beer| %>
   <%= link_to beer_path(beer) do %>
     <div class="sipz-list">
-      <div class="sipz-image" style="background: url(/assets/pic-<%= beer.id %>.png) center;  background-size: cover;"></div>
+     <div class="sipz-preview" style="background: url(<%= beer.picture.url %>) center; background-size: cover;">
+     </div>
       <div class="sipz-caption">
         <div class="beer-name">
           <%= beer.name %>

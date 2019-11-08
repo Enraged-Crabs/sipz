@@ -1,8 +1,6 @@
 <div class="sipz-post">
-  <div class="sipz-image">
-     <% if @beer.picture.url %>
-        <%= image_tag @beer.picture.url, class: 'img-fluid' %>
-      <% end %>
+  <div class="sipz-image" style="background: url(<%= @beer.picture.url %>) center; background-size: cover;">
+     
  </div>
 
   <div class="sipz-caption">
@@ -24,11 +22,8 @@
 <% @beer.posts.each do |post| %>
   <%= link_to beer_post_path(@beer, post) do %>
     <div class="sipz-list">
-      <div class="sipz-image"> 
-         <% if @post.picture.url %>
-            <%= image_tag @post.picture.url, class: 'img-fluid' %>
-         <% end %>
-      </div>
+      <div class="sipz-image" style="background: url(<%= post.picture.url %>) center; background-size: cover;">   
+ </div>
       <div class="sipz-caption">
         <br />
         <div class="beer-name">
