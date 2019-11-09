@@ -2,11 +2,12 @@
   <div class="sipz-form">
     <div class="form-image">
       add beer image<br />
-      <input type="text" size="39" value=" image uploader">
+      <%= f.file_field :picture %>
     </div>
     <div class="form-caption">
       add beer caption<br />
       <%= f.input :name, required: true, label: false, placeholder: 'beer name' %>
+      
       <%= f.submit 'Add Beer', class: 'enter float-right' %>
     </div>
   </div>

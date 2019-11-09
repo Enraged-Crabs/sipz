@@ -2,11 +2,12 @@
   <div class="sipz-list">
     <div class="sipz-image">
       add post image<br /><br />
-      <input type="text" size="14" value=" image uploader">
+      <%= f.file_field :picture %>
     </div>
     <div class="sipz-caption">
       add post caption<br /><br />
       <%= f.input :caption, label: false, placeholder: '3-100 character caption', as: :text, :input_html => { :rows => 2 } %>
+     
       <%= f.submit 'Add Post', class: 'enter float-right' %>
     </div>
   </div>
