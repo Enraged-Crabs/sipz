@@ -1,17 +1,23 @@
-<div class="welcome-login">
-  <p>
-    Share</br>
-    - beers</br>
-    - breweries</br>
-    Rate and Follow</br>
-    - beers</br>
-    - breweries</br>
-    - users
-  </p>
-</div>
-<div class="form-login">
-  <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-    <%= f.input :email, required: true, label: false, placeholder: 'email', class: 'btn' %>
-    <%= f.button :submit, 'Send reset password instructions', class: 'enter float-right' %>
-  <% end %>
+<div class="sipz-form">
+  <div class="sipz-image">
+    <br />
+    <p>
+      Share</br>
+      - beers</br>
+      - breweries</br>
+      Rate and Follow</br>
+      - beers</br>
+      - breweries</br>
+      - users
+    </p>
+  </div>
+  <div class="sipz-caption">
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <br />
+      Forgot Password
+      <br /><br />
+      <%= f.input :email, required: true, label: false, placeholder: 'email', class: 'btn' %>
+      <%= f.button :submit, 'Send reset password instructions', class: 'enter float-right' %>
+    <% end %>
+  </div>
 </div>

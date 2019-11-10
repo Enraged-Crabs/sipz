@@ -1,16 +1,18 @@
 <% @beers.each do |beer| %>
   <%= link_to beer_path(beer) do %>
     <div class="sipz-list">
-     <div class="sipz-preview" style="background: url(<%= beer.picture.url %>) center; background-size: cover;">
-     </div>
       <div class="sipz-caption">
-        <div class="beer-name">
+        <br />
+        <div class="sipz-title">
           <%= beer.name %>
         </div>
-        <br /><br />
-        <div class="user-date"> 
-          added by <%= beer.user.username %> on <%= beer.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+        <div class="float-bottom">
+          <div class="user-date"> 
+            added by <%= beer.user.username %> on <%= beer.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+          </div>
         </div>
+      </div>
+      <div class="sipz-preview" style="background: url(<%= beer.picture.url %>) center; background-size: cover;">
       </div>
     </div>
   <% end %>
