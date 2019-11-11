@@ -13,7 +13,7 @@ body {
   overflow-y: scroll; 
 }
 
-a, .signin, .signup, .forgot, .addbeer, .editbeer, .addpost, .editpost, .sipz-user {
+a, .signin, .signup, .forgot, .addbeer, .editbeer, .addpost, .editpost, .addcomment, .editcomment, .sipz-user {
   color: gray;
   font-size: 15px;
   font-weight: 500;
@@ -21,9 +21,25 @@ a, .signin, .signup, .forgot, .addbeer, .editbeer, .addpost, .editpost, .sipz-us
   text-decoration: none;
 }
 
-a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:hover, .addpost:hover, .editpost:hover, .sipz-user > a:hover {
+.editcomment, .deletecomment {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.editcomment {
+  color: green;
+}
+
+.deletecomment {
+  color: red;
+}
+
+a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:hover, .addpost:hover, .editpost:hover, .addcomment:hover, .editcomment:hover, .sipz-user > a:hover {
   color: orange;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .sipz-user > a {
@@ -31,7 +47,7 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:
   font-weight: 700;
 }
 
-#SignIn, #SignUp, #Forgot, #AddBeer, #EditBeer, #AddPost, #EditPost {
+#SignIn, #SignUp, #Forgot, #AddBeer, #EditBeer, #AddPost, #EditPost, #AddComment, #EditComment {
   display: none;
 }
 
@@ -72,24 +88,6 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:
 
 .sipz-nav {
   float: right;
-}
-
-.sipz-form {
-  float: left;
-  position: absolute;
-  z-index: 2;
-}
-
-.sipz-form > .form-image {
-  width: 410px;
-  height: 410px;
-}
-
-.sipz-form > .form-caption {
-  width: 410px;
-  height: 410px;
-  margin: 5px;
-  background: whitesmoke;
 }
 
 .welcome-login, .form-login, .form-image, .form-caption {
@@ -147,49 +145,10 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:
   line-height: 26px;
 }
 
-.enter {
-  height: 30px;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 10px;
-  color: white;
-  border: none;
-  border-radius: 0px;
-  background-color: orange;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.form-caption > .enter, .form-caption > .enter-info  {
-  position: absolute;
-  bottom: 25px;
-}
-
-.form-caption > .enter {
-  right: 25px;  
-}
-
-.form-caption > .enter-info {
-  left: 25px;  
-}
-
-.enter:hover {
-  background-color: black;
-  color: orange;
-}
-
-.content {
-  margin-top: 40px;
-  height: 100%;
-}
-
 .alert, .notice {
   float: right;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 700;
   line-height: 30px;
   padding: 0px;
   margin: 0px;
@@ -199,11 +158,11 @@ a:hover, .signin:hover, .signup:hover, .forgot:hover, .addbeer:hover, .editbeer:
 }
 
 .notice {
-  color: gray;
+  color: green;
 }
 
 .alert {
-  color: orange;
+  color: red;
 }
 
 

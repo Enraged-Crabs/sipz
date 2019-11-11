@@ -1,13 +1,15 @@
 <%= simple_form_for @beer do |f| %>
   <div class="sipz-form">
-    <div class="form-image">
-      edit beer image<br /><br />
-       <%= f.file_field :picture %>
-    </div>
-    <div class="form-caption">
-      edit beer name<br /><br />
+    <div class="sipz-caption">
+      <br />edit beer name<br /><br />
       <%= f.input :name, required: true, label: false %>
-      <%= f.submit 'Update Beer', class: 'enter float-right' %>    
+      <div class="float-bottom">
+        <%= f.submit 'Update Beer', class: 'enter' %>
+      </div> 
+    </div>
+    <div class="sipz-image">
+      <br />edit beer image<br /><br />
+      <%= f.file_field :picture %>
     </div>
   </div>
 <% end %>

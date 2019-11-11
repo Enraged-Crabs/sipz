@@ -1,20 +1,46 @@
 <div class="sipz-post">
-  <div class="sipz-image" style="background: url(<%= @post.picture.url %>) center; background-size: cover;">   
- </div>
   <div class="sipz-caption">
     <br /><br />
-    <div class="beer-name">
+    <div class="sipz-title">
       <%= @post.caption %>
     </div>
-    <br /><br />
-    <div class="user-date">
-      posted by <%= @post.user.username %> on <%= @post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+    <div class="float-bottom">
+      <div class="user-date"><%= link_to @post.beer.name, beer_path(@post.beer) %> post</div>
+      <div class="user-date">
+        posted by <%= @post.user.username %> on <%= @post.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+      </div>
+      <br />
+      <div class="addcomment enter float-left">New Comment</div>
     </div>
-    <div class="addcomment enter float-right">Add Comment</div>
+  </div>
+  <div class="sipz-image" style="background: url(<%= @post.picture.url %>) center; background-size: cover;">   
   </div>
 </div>
-<div class="sipz-comments">
-
-user comments code here
-
+<div id="AddComment">
+  <%= render template: "comments/new" %>
 </div>
+<% @post.comments.each do |comment| %>
+  <div class="sipz-list">
+    <div class="sipz-comment">
+      <div class="sipz-message">
+        <%= comment.message %>
+        <span class="editcomment">edit</span>
+        <%= link_to 'delete', beer_post_comment_path(@beer, @post, comment), method: :delete, data: {confirm: 'Are you sure you want to delete this Comment?'}, class: "deletecomment" %>
+      </div><br />
+      <div class="float-bottom user-date">
+        posted by <%= comment.user.username %> on <%= comment.created_at.strftime("%b %d, %Y" + " at " + "%H:%M") %>
+      </div>        
+    </div>
+  </div>
+  <div id="EditComment">
+    <!-- render template: "comments/edit" -->
+  </div>
+<% end %>
+<script>
+  $( ".addcomment" ).click(function() {
+    $( "#AddComment" ).toggle();
+  });
+  $( ".editcomment" ).click(function() {
+    $( "#EditComment" ).toggle();
+  });
+</script>

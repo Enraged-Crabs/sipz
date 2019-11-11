@@ -1,0 +1,39 @@
+.sipz-post {
+  float: left;
+  position: relative;
+}
+
+.sipz-form {
+  position: absolute;
+  z-index: 2;
+}
+
+.sipz-image {
+  color: white;
+  background-color: orange;
+}
+
+.sipz-comment {
+  width: 840px;
+}
+
+.sipz-message {
+  font-size: 20px;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.sipz-caption, .sipz-comment {
+  background: whitesmoke;
+}
+
+
+.sipz-image, .sipz-caption {
+  width: 420px;
+  height: 420px;
+}
+
+.sipz-image, .sipz-caption, .sipz-comment {
+  float: left;
+  border: 5px solid white;
+  padding: 20px;
+}

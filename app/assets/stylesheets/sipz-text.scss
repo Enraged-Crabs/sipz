@@ -1,0 +1,57 @@
+.center {
+  line-height: 200px;
+  text-align: center;
+}
+
+.center p {
+  line-height: 25px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sipz-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.user-date {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 30px;
+  text-align: left;
+}
+
+.float-bottom {
+  position: absolute;
+  width: 370px;
+  bottom: 25px;
+}
+
+.float-bottom > .sipz-text {
+  line-height: 30px;
+}
+
+.sipz-post > .sipz-caption > .sipz-title {
+  text-align: center;
+}
+
+.enter {
+  height: 30px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 10px;
+  color: white;
+  border: none;
+  border-radius: 0px;
+  background-color: orange;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.enter:hover {
+  color: orange;
+  background-color: white;
+}

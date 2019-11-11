@@ -1,14 +1,15 @@
 <%= simple_form_for Post.new, url: beer_posts_path(@beer, @post) do |f| %>
-  <div class="sipz-list">
-    <div class="sipz-image">
-      add post image<br /><br />
-      <%= f.file_field :picture %>
-    </div>
+  <div class="sipz-addpost">    
     <div class="sipz-caption">
       add post caption<br /><br />
       <%= f.input :caption, label: false, placeholder: '3-100 character caption', as: :text, :input_html => { :rows => 2 } %>
-     
-      <%= f.submit 'Add Post', class: 'enter float-right' %>
+      <div class="float-bottom">
+        <%= f.submit 'Add Post', class: 'enter' %>
+      </div>
+    </div>
+    <div class="sipz-image">
+      add post image<br /><br />
+      <%= f.file_field :picture %>
     </div>
   </div>
 <% end %>

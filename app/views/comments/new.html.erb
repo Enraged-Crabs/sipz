@@ -1,0 +1,8 @@
+<%= simple_form_for Comment.new, url: beer_post_comments_path(@beer, @post, @comment) do |f| %>
+  <div class="sipz-list">
+    <div class="sipz-comment">
+      <%= f.input :message, label: false, placeholder: '3-100 character caption', as: :text %>
+      <%= f.submit 'Add Comment', class: 'enter float-left' %>
+    </div>
+  </div>
+<% end %>

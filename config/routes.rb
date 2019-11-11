@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root "beers#index"
   get 'list', to: 'beers#list'
   
-  resources :beers, only: [:new, :create, :show, :edit, :update, :destroy] do
-    resources :posts
+  resources :beers, only: [:create, :show, :update, :destroy] do
+    resources :posts, only: [:create, :show, :update, :destroy] do
+      resources :comments, only: [:create, :show, :update, :destroy]
+    end
   end
-
 end
