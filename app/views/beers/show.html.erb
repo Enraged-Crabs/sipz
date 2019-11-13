@@ -13,8 +13,23 @@
       <div class="sipz-text float-right">add a post realted to this beer</div>      
     </div>
   </div>
+  <% if @beer.picture.url.end_with? ".mp4" %>
+     <video id="my-video" class="video-js" controls preload="auto" width="250" height="264"
+     poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+    <source src=<%= @beer.picture.url %> type='video/mp4'>
+    <source src="MY_VIDEO.webm" type='video/webm'>
+    <noscript>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </noscript>
+  </video>
+  <% else %>
   <div class="sipz-image" style="background: url(<%= @beer.picture.url %>) center; background-size: cover;">     
   </div>
+  <% end %>
+
 </div>
 <div id="AddPost">
   <%= render template: "posts/new" %>
@@ -34,6 +49,7 @@
       </div>
       <div class="sipz-image" style="background: url(<%= post.picture.url %>) center; background-size: cover;">   
       </div>
+
     </div>
   <% end %>
 <% end %>
