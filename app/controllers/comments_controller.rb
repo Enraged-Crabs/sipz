@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
         @comment = Comment.find_by_id(params[:id])
         return render_not_found if @comment.blank?
         return render_not_found(:forbidden) if @comment.user != current_user
-        @comment.update_attributes(beer_params)
+        @comment.update_attributes(comment_params)
         if @comment.valid?
           redirect_to beer_post_path(@beer, @post)
         else

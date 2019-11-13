@@ -1,4 +1,4 @@
-<%= simple_form_for @comment, url: beer_post_comment_path(@beer, @post, @comment) do |f| %>
+<%= simple_form_for comment, url: beer_post_comment_path(@beer, @post, comment) do |f| %>
   <div class="sipz-list">
     <div class="sipz-comment">      
       <%= f.input :message, required: true, label: false %>
