@@ -33,7 +33,7 @@
     </div>
   </div>
   <div id="EditComment">
-    <!-- render template: "comments/edit" -->
+    <%= render template: "comments/edit", locals: { comment: comment } %>
   </div>
 <% end %>
 <script>
