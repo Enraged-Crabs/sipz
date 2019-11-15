@@ -15,8 +15,8 @@
   </div>
   <div class="sipz-image" style="background: url(<%= @post.picture.url %>) center; background-size: cover;">
     <% if @beer.picture.url.end_with? ".mp4" %>
-      <video id="my-video" class="video-js vjs-big-play-centered" controls preload="auto" width="410" height="410" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
-      <source src=<%= @beer.picture.url %> type="video/mp4">
+      <video id="video" class="video-js vjs-big-play-centered vjs-fill" controls preload="auto" poster=<%= @post.picture.url %> />
+      <source src=<%= @post.picture.url %> type="video/mp4">
       <noscript>
         <p class="vjs-no-js">
           To view this video please enable JavaScript, and consider upgrading to a web browser that
