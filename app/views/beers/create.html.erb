@@ -1,0 +1,15 @@
+<%= simple_form_for Beer.new do |f| %>
+  <div class="sipz-form">
+    <div class="sipz-caption">
+      <br />add beer caption<br /><br />
+      <%= f.input :name, required: true, label: false, placeholder: 'beer name' %>
+      <div class="float-bottom">
+        <%= f.submit 'Add Beer', class: 'enter' %>
+      </div>
+    </div>
+    <div class="sipz-image">
+      <br />add beer image<br /><br />
+      <%= f.file_field :picture %>
+    </div>
+  </div>
+<% end %>
