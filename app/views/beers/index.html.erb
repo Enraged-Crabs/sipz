@@ -3,6 +3,19 @@
 <% @beers.each do |beer| %>
   <%= link_to beer_path(beer) do %>
     <div class="sipz-preview" style="background: url(<%= beer.picture.url %>) center; background-size: cover;">
+      <div class="sipz-video">
+      <% if beer.picture.url.end_with? ".mp4" %>
+      <video id="video" class="video-js vjs-big-play-centered vjs-fill" controls preload="auto" poster=<%= beer.picture.url %> />
+      <source src=<%= beer.picture.url %> type="video/mp4">
+        <noscript>
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+          </p>
+        </noscript>
+        </video>
+      <% end %>
+      </div>
       <div class="sipz-caption">
         <div class="sipz-title center">
           <p><%= beer.name %></p>

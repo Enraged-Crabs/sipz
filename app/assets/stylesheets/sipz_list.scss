@@ -16,14 +16,23 @@
   transition: all 0.4s ease-in;
 }
 
-.sipz-preview > .sipz-caption {
+.sipz-preview > .sipz-video, .sipz-preview > .sipz-caption {
   position: relative;
   width: 100%;
   height: 100%;
   padding: 0px;
   margin: 0px;
-  opacity: 0;
   transition: all 0.4s ease-in;
+}
+
+.sipz-preview > .sipz-video {
+  z-index: 1;
+}
+
+.sipz-preview > .sipz-caption {
+  top: -200px;
+  opacity: 0;
+  z-index: 2;
 }
 
 .sipz-list-link:hover, .sipz-preview:hover > .sipz-caption {
