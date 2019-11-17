@@ -1,3 +1,11 @@
+<script type="text/javascript">
+  $(function() {
+     $("input:file").change(function (){
+       var fileName = $(this).val();
+       $(".filename").html(fileName);
+     });
+  });
+</script>
 <%= simple_form_for @beer do |f| %>
   <div class="sipz-form">
     <div class="sipz-caption">
@@ -8,8 +16,9 @@
       </div> 
     </div>
     <div class="sipz-image">
-      <br />edit beer image<br /><br />
-      <%= f.file_field :picture %>
+      <br />
+      <%= f.file_field :picture, id: "picture" %>
+      <label for="picture" class="filename" />drag and drop a beer photo or video</label>
     </div>
   </div>
 <% end %>
