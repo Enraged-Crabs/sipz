@@ -8,6 +8,14 @@
     <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
   </head>
   <body>
+    <script>
+      $(function() {
+         $("input:file").change(function (){
+           var fileName = $(this).val().replace(/^.*\\/, "");
+           $(".fileoutput").html(fileName);
+         });
+      });
+    </script>
     <div class="sipz-columns">
       <div></div>
       <div>
