@@ -8,8 +8,9 @@
       </div> 
     </div>
     <div class="sipz-image">
-      <br />edit beer image<br /><br />
-      <%= f.file_field :picture %>
+      <br />edit beer photo or video<br /><br />
+      <%= f.file_field :picture, type: "file", class: "fileinput" %>
+      <label for="file" class="fileoutput" style="cursor: pointer;">click to choose file or drag and drop</label>
     </div>
   </div>
 <% end %>
