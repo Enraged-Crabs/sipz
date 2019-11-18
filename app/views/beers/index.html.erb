@@ -1,5 +1,12 @@
 <%= link_to "NEW", "/list", class: "sipz-list-link" %>
 
+<div class="sipz-preview">
+  <%= form_tag beers_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil%>
+  <% end %>
+</div>
+
 <% @beers.each do |beer| %>
   <%= link_to beer_path(beer) do %>
     <div class="sipz-preview" style="background: url(<%= beer.picture.url %>) center; background-size: cover;">

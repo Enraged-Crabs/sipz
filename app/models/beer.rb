@@ -6,5 +6,13 @@ class Beer < ApplicationRecord
 
   belongs_to :user
 
-  has_many :posts, :dependent => :delete_all  
+  has_many :posts, :dependent => :delete_all
+
+  def self.search(search)
+	if search
+	  find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+	else
+	  order('RANDOM()').all
+	end
+  end
 end

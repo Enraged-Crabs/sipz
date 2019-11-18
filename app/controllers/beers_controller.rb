@@ -2,7 +2,7 @@ class BeersController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update, :destroy]
   
   def index
-    @beers = Beer.order('RANDOM()').all
+	@beers = Beer.search(params[:search])
   end
   
   def list
