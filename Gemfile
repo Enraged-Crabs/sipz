@@ -72,7 +72,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'font-awesome-rails'
 gem 'travis'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem "figaro"
 gem "fog-aws"
 gem 'video-js-rails'
